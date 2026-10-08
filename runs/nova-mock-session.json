@@ -1,0 +1,40 @@
+{
+  "format": "aira-workout-run-v1",
+  "label": "nova-mock-session",
+  "appVersion": "2.0.0",
+  "schemaVersion": "3",
+  "selectedProvider": "mock",
+  "note": "Full 5-phase NOVA athletic workout session verification: screening, dynamic warm-up, 5-round HIIT circuit with interval timers, recovery cooldown, and final summary.",
+  "events": [
+    { "kind": "input", "text": "start" },
+    { "kind": "response", "text": "Hey Athlete! Welcome to your NOVA session.\n\nToday: HIIT Circuit, Strength and Conditioning. Before we begin, how are you feeling on a scale of 1 to 5?" },
+    { "kind": "input", "text": "5 - Lets go" },
+    { "kind": "response", "text": "Got it - energy calibrated. High energy locked in. Let us make this count.\n\nNext: Warm-Up Protocol. Three minutes of dynamic activation. Hit Start on the timer and work through each movement." },
+    { "kind": "input", "text": "ready" },
+    { "kind": "response", "text": "Warm-up complete! Body is primed. Entering the Main Circuit (Phase 3).\n\n5 rounds, 4 exercises, 40 seconds each. Start the timer and push!" },
+    { "kind": "input", "text": "next round" },
+    { "kind": "response", "text": "Round 1 complete! Halfway there. You are doing great.\n\nStarting Round 2. Reset the timer and go!" },
+    { "kind": "input", "text": "next round" },
+    { "kind": "response", "text": "Round 2 complete! Past the midpoint. This is where champions are made.\n\nStarting Round 3. Reset the timer and go!" },
+    { "kind": "input", "text": "cooldown" },
+    { "kind": "response", "text": "Entering Cooldown and Recovery (Phase 4). Let your heart rate come down." },
+    { "kind": "input", "text": "finish" },
+    { "kind": "response", "text": "Session complete. Outstanding work Athlete. Here is your summary (Phase 5)." }
+  ],
+  "state": {
+    "ui_state": "root = Screens([welcome, warmup, circuit, cooldown, summary], summary)",
+    "client_events": [
+      "Now on step 1 of 5",
+      "Started timer Warm-Up Phase",
+      "Finished timer Warm-Up Phase",
+      "Now on step 3 of 5",
+      "Started timer Work Interval",
+      "Now on step 5 of 5"
+    ]
+  },
+  "timers": [
+    { "id": "wuTimer", "label": "Warm-Up Phase", "seconds": 180, "remaining": 0, "status": "done" },
+    { "id": "cTimer", "label": "Work Interval", "seconds": 40, "remaining": 0, "status": "done" },
+    { "id": "cdTimer", "label": "Cooldown", "seconds": 90, "remaining": 0, "status": "done" }
+  ]
+}

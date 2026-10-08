@@ -1,0 +1,29 @@
+{
+  "format": "aira-workout-run-v1",
+  "label": "nova-api-session",
+  "appVersion": "2.0.0",
+  "schemaVersion": "3",
+  "selectedProvider": "openai-api",
+  "note": "OpenAI API model-guided session run: prompt-driven screen generation with OpenUI validation and live response envelope.",
+  "events": [
+    { "kind": "input", "text": "start" },
+    { "kind": "response", "text": "Welcome to NOVA training! Today we are focusing on athletic conditioning. Rate your current energy from 1 to 5 to calibrate our work." },
+    { "kind": "input", "text": "4 - ready" },
+    { "kind": "response", "text": "Calibrated for high output. Starting with the Warm-Up Protocol. Activate your joints with 3 minutes of mobility drills." },
+    { "kind": "input", "text": "ready" },
+    { "kind": "response", "text": "Phase 3 unlocked: 5 rounds of high-intensity functional circuit. Push through the 40s work intervals!" }
+  ],
+  "state": {
+    "ui_state": "root = Screens([welcome, warmup, circuit], circuit)",
+    "client_events": [
+      "Now on step 1 of 3",
+      "Started timer Warm-Up Phase",
+      "Finished timer Warm-Up Phase",
+      "Now on step 3 of 3"
+    ]
+  },
+  "timers": [
+    { "id": "wuTimer", "label": "Warm-Up Phase", "seconds": 180, "remaining": 0, "status": "done" },
+    { "id": "cTimer", "label": "Work Interval", "seconds": 40, "remaining": 40, "status": "stopped" }
+  ]
+}
